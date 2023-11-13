@@ -98,13 +98,13 @@ def convert_to_gb(size_str):
     # get size
     unit = size_str[-1].lower()
 
-    # convert to GB
+    # conversion to GB
     if unit == 't':
-        return numeric_part * 1024  # 1TB = 1024 GB
+        return numeric_part * 1024  # 1tb = 1024 GB
     elif unit == 'g':
         return numeric_part
     elif unit == 'm':
-        return numeric_part / 1024  # 1MB = 0.001 GB /
+        return numeric_part / 1024  # 1mb = 0,001 GB //
     else:
         return 0.0  # error
 
@@ -144,7 +144,7 @@ def send_to_teams(os_info, teams_webhook_url):
         print("Problem sending. HTTP Statuscode:", response.status_code)
 
 def main():
-    # ms teams webhook url (Incoming Webhook APP)
+    # ms teams webhook url (incoming Webhook APP)
     os_info = get_os_info()
     send_to_teams(os_info, TEAMS_WEBHOOK_URL)  # format is: TEAMS_WEBHOOK_URL = "url" in example_config.py (rename to config.py)
 
